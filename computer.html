@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type='text' id='no1'/>
+    <select id='select'>
+        <option value='+'>+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type='text' id='no2'/>
+    <input type='button' value=' = ' onclick="count()"/>
+    <input type='text' id='end'/>
+    <script type="text/javascript" src="computer.js"></script>
+    <script type="text/javascript">
+
+        function count() {
+            //获取第一个输入框的值
+            //parseInt()函数是把字符串转换成整形
+            var a = document.getElementById("no1").value;
+            //获取第二个输入框的值
+            var b = document.getElementById("no2").value;
+            //获取选择框的值
+            var c = document.getElementById("select").value;
+            var d;
+            switch (c) {
+                case "+":
+                    d = accAdd(a, b);
+                    break;
+                case "-":
+                    d = a.sub(b);
+                    break;
+                case "*":
+                    d = a.mul(b);
+                    break;
+                case "/":
+                    d = a.div(b);
+                    break;
+            }
+            document.getElementById("end").value = d;
+        }
+    </script>
+</body>
+</html>
