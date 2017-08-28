@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
-    <title>Date ÑİÊ¾</title>
+    <meta charset="UTF-8">
+    <title>Date æ¼”ç¤º</title>
 </head>
 <body>
 <script type="text/javascript" src="date_util.js"></script>
 <script type="text/javascript">
     /**
-     * ´òÓ¡Ö¸¶¨²ÎÊıÊı¾İµ½Ò³ÃæÉÏ£¬²¢»»ĞĞ¡£
+     * æ‰“å°æŒ‡å®šå‚æ•°æ•°æ®åˆ°é¡µé¢ä¸Šï¼Œå¹¶æ¢è¡Œã€‚
      */
     function println(param) {
         document.write(param + "<br/>");
     }
 
     /**
-     * ´òÓ¡Ö¸¶¨²ÎÊıÊı¾İµ½Ò³ÃæÉÏ¡£
+     * æ‰“å°æŒ‡å®šå‚æ•°æ•°æ®åˆ°é¡µé¢ä¸Šã€‚
      */
     function print(param) {
         document.write(param);
     }
     /*
-     * ÑİÊ¾jsÖĞµÄÈÕÆÚ¡£ Date
+     * æ¼”ç¤ºjsä¸­çš„æ—¥æœŸã€‚ Date
      */
 
     var date = new Date();
     println("date:" + date);
-    println("toLocaleString:" + date.toLocaleString());//ÈÕÆÚºÍÊ±¼ä
-    println("toLocaleDateString:" + date.toLocaleDateString());//Ö»ÓĞÈÕÆÚ¡£
+    println("toLocaleString:" + date.toLocaleString());//æ—¥æœŸå’Œæ—¶é—´
+    println("toLocaleDateString:" + date.toLocaleDateString());//åªæœ‰æ—¥æœŸã€‚
 
     /*
-     * ÎªÁË¼ò»¯¶ÔÏóµ÷ÓÃÄÚÈİµÄÊéĞ´¡£
-     * ¿ÉÒÔÊ¹ÓÃjsÖĞµÄÌØÓĞÓï¾äwithÀ´Íê³É¡£
-     * ¸ñÊ½£º
-     * with(¶ÔÏó)
+     * ä¸ºäº†ç®€åŒ–å¯¹è±¡è°ƒç”¨å†…å®¹çš„ä¹¦å†™ã€‚
+     * å¯ä»¥ä½¿ç”¨jsä¸­çš„ç‰¹æœ‰è¯­å¥withæ¥å®Œæˆã€‚
+     * æ ¼å¼ï¼š
+     * with(å¯¹è±¡)
      * {
-     * 		ÔÚ¸ÃÇøÓòÖĞ¿ÉÒÔÖ±½ÓÊ¹ÓÃÖ¸¶¨µÄ¶ÔÏóµÄÄÚÈİ¡£²»ĞèÒªĞ´  ¶ÔÏó.
+     * 		åœ¨è¯¥åŒºåŸŸä¸­å¯ä»¥ç›´æ¥ä½¿ç”¨æŒ‡å®šçš„å¯¹è±¡çš„å†…å®¹ã€‚ä¸éœ€è¦å†™  å¯¹è±¡.
      * }
      */
     //			var year = date.getFullYear();
@@ -52,24 +52,24 @@
 
 
     function getWeek(num) {
-        var weeks = ['ĞÇÆÚÈÕ', 'ĞÇÆÚÒ»', 'ĞÇÆÚ¶ş', 'ĞÇÆÚÈı', 'ĞÇÆÚËÄ', 'ĞÇÆÚÎå', 'ĞÇÆÚÁù'];
+        var weeks = ['æ˜ŸæœŸæ—¥', 'æ˜ŸæœŸä¸€', 'æ˜ŸæœŸäºŒ', 'æ˜ŸæœŸä¸‰', 'æ˜ŸæœŸå››', 'æ˜ŸæœŸäº”', 'æ˜ŸæœŸå…­'];
         return weeks[num];
     }
 
 
-    // ÈÕÆÚ¶ÔÏóºÍºÁÃëÖµÖ®¼äµÄ×ª»»¡£
+    // æ—¥æœŸå¯¹è±¡å’Œæ¯«ç§’å€¼ä¹‹é—´çš„è½¬æ¢ã€‚
     var date2 = new Date();
-    //»ñÈ¡ºÁÃëÖµ¡£ ÈÕÆÚ¶ÔÏó-->ºÁÃëÖµ¡£
+    //è·å–æ¯«ç§’å€¼ã€‚ æ—¥æœŸå¯¹è±¡-->æ¯«ç§’å€¼ã€‚
     var time = date2.getTime();
     println("time:" + time);//1338191622156
-    //½«ºÁÃëÖµ×ª³ÉÈÕÆÚ¶ÔÏó¡£
+    //å°†æ¯«ç§’å€¼è½¬æˆæ—¥æœŸå¯¹è±¡ã€‚
     //1,new Date(time);//setTime();
     var date3 = new Date(time);
 
 
-    //½«ÈÕÆÚ¶ÔÏóºÍ×Ö·û´®Ö®¼ä½øĞĞ×ª»»¡£
-    //ÈÕÆÚ¶ÔÏó×ª³É×Ö·û´®¡£toLocaleString  toLocaleDateString
-    //½«×Ö·û´®×ª³ÉÈÕÆÚ¶ÔÏó¡£¾ß±¸Ö¸¶¨¸ñÊ½µÄÈÕÆÚ×Ö·û´®-->ºÁÃëÖµ--->ÈÕÆÚ¶ÔÏó¡£
+    //å°†æ—¥æœŸå¯¹è±¡å’Œå­—ç¬¦ä¸²ä¹‹é—´è¿›è¡Œè½¬æ¢ã€‚
+    //æ—¥æœŸå¯¹è±¡è½¬æˆå­—ç¬¦ä¸²ã€‚toLocaleString  toLocaleDateString
+    //å°†å­—ç¬¦ä¸²è½¬æˆæ—¥æœŸå¯¹è±¡ã€‚å…·å¤‡æŒ‡å®šæ ¼å¼çš„æ—¥æœŸå­—ç¬¦ä¸²-->æ¯«ç§’å€¼--->æ—¥æœŸå¯¹è±¡ã€‚
     var str_date = "9/28/2017";
 
     var time2 = Date.parse(str_date);
