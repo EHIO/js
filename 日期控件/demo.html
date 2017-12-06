@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My97DatePicker演示</title>
+    <script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+
+    <table width="335" border="0" cellpadding="3" cellspacing="1">
+        <tbody>
+        <tr>
+            <td align="center">格式</td>
+            <td>说明</td>
+        </tr>
+        <tr>
+            <td align="center">%y </td>
+            <td>当前年</td>
+        </tr>
+        <tr>
+            <td align="center">%M </td>
+            <td>当前月</td>
+        </tr>
+        <tr>
+            <td align="center">%d </td>
+            <td>当前日</td>
+        </tr>
+        <tr>
+            <td align="center">%ld</td>
+            <td>本月最后一天</td>
+        </tr>
+        <tr>
+            <td align="center">%H </td>
+            <td>当前时</td>
+        </tr>
+        <tr>
+            <td align="center">%m </td>
+            <td>当前分</td>
+        </tr>
+        <tr>
+            <td align="center">%s </td>
+            <td>当前秒</td>
+        </tr>
+        <tr>
+            <td align="center">{}</td>
+            <td>运算表达式,如:{%d+1}:表示明天</td>
+        </tr>
+        <tr>
+            <td align="center">#F{}</td>
+            <td>{}之间是函数可写自定义JS代码</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <hr />
+    <input id="d11" type="text" onClick="WdatePicker()"/>
+
+
+    <hr />
+    <input name="publishTime" class="Wdate" type="text"  onClick="WdatePicker({dateFmt:'H:mm:00'})"/>
+
+
+    <hr />
+    <b>当日时间段限制:</b> <br />
+    示例 只允许选择本月的 09:00:00 至 17:30:00 <br />
+    <input id="d482" type="text" class="Wdate" onclick="WdatePicker({disabledDates:['%y-%M-%d {%H-1}\:..\:..','%y-%M-%d {%H+1}\:..\:..'], dateFmt:'yyyy-MM-dd HH:mm:ss'})"/>
+    <input id="d46" type="text" class="Wdate" onclick="WdatePicker({opposite:true,disabledDates:['0$'],dateFmt:'yyyy-MM-dd HH:mm:ss',
+    disabledDates:['%y-%M-%d {%H-1}\:..\:..','%y-%M-%d {%H+1}\:..\:..']})"/>
+    <input id="d47" type="text" class="Wdate" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:00',opposite:true,disabledDates:['%H:%0$']})"/>
+
+    <input id="d2a25" type="text" class="Wdate" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',disabledDates:['%y-%M-%d {%H-1}\:..\:..','%y-%M-%d {%H+1}\:..\:..']})"/>
+    <hr />
+    <!--hmsMenuCfg 可以实现时分秒菜单的自定义时分秒自定义 H m s 分别代表时分秒-->
+    <input id="d2a26" type="text" class="Wdate" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',hmsMenuCfg:{ H: [1, 6], m: [10, 6], s: [15, 4] }})"/>
+</body>
+</html>
